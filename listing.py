@@ -8,18 +8,19 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-que = "SELECT * FROM custom"
+
+# que = "SELECT * FROM custom "
 # mycursor.execute("SELECT * FROM custom")
-mycursor.execute(que)
+mycursor.execute("SELECT * FROM custom ")
 myresult = mycursor.fetchall()
 
-dict = {}
+data_list = []
 # empty dictionary
-
-for value in myresult:
-   
-    name = value[0]  
-    address = value[1]  
-    dict[name] = [address]
-
-print([dict])
+for  value in myresult:
+    dic = {
+        'name' : value[0],
+        'address' : value[1],
+        'id' : value[2]
+      }
+    data_list.append(dic)
+print(data_list)

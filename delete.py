@@ -9,7 +9,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "DELETE FROM custom WHERE id = 3"
+sql = "DELETE FROM custom WHERE id = 6"
 
 mycursor.execute(sql)
 
